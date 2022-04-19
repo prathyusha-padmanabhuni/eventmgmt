@@ -29,7 +29,7 @@ function SubNavbar (props) {
           
         return (
              <div className="Navbarcs" style={navbar} >
-                <img src={pic} alt="logo" width="70px" height="70px"  /> 
+                <img src={logo} alt="logo" width="70px" height="70px"  /> 
                 <h2 style={header}>{props.outer.hC0}</h2>
                  
                 <ul>

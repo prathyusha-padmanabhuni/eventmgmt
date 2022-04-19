@@ -16,9 +16,9 @@ import {useNavigate,Link } from 'react-router-dom';
 import Footer from "./footer";
 // import SubPage from "./subpage" ;
 var pic="../../public/images/";
-function deleteevent(id){
+async function deleteevent(id){
     
-    axios.delete('/main/del/uid/'+localStorage.getItem("username")+'/fid/'+id)
+    await axios.delete('/main/del/uid/'+localStorage.getItem("username")+'/fid/'+id)
       .then(response => { 
           if(response.data==="deleted")
           window.location.reload(false);

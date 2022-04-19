@@ -130,8 +130,8 @@ function DisplayMainInfo (){
               );
                
 }
-function deleteevent(fid,id){
-    axios.delete('/sub/fid/'+fid+'/eve/'+id)
+async function deleteevent(fid,id){
+    await axios.delete('/sub/fid/'+fid+'/eve/'+id)
       .then(response => { 
           if(response.data==="deleted")
           window.location.reload(false);

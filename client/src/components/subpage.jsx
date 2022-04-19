@@ -165,7 +165,7 @@ function SubPage(){
             };
           });
       }
-      function submitOuter(event) {
+      async function submitOuter(event) {
         
          
           const userSub=new FormData();
@@ -188,14 +188,14 @@ function SubPage(){
           userSub.append("reginfo",sub.reginfo)
           
           if(cid==="0"){
-          axios.post('/sub/add/'+fid, userSub)
+          await axios.post('/sub/add/'+fid, userSub)
             .then(res => {console.log(res.data)
               navigate("/Mainpage/Sub/"+fid);
              
              });
             }
           else{
-            axios.post('/sub/find/fid/'+cid, userSub)
+            await axios.post('/sub/find/fid/'+cid, userSub)
             .then(res => { navigate("/Mainpage/Sub/"+fid);
             });
             }

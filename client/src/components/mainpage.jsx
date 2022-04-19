@@ -104,7 +104,7 @@ function Mainpage(){
             };
           });
       }
-      function submitOuter(event) {
+      async function submitOuter(event) {
         
         
           const userOuter=new FormData();
@@ -129,13 +129,13 @@ function Mainpage(){
            
           if(stat==="create")
           {
-          axios.post('/main/add/uid/'+localStorage.getItem("username"), userOuter)
+          await axios.post('/main/add/uid/'+localStorage.getItem("username"), userOuter)
             .then(res => { navigate("/outer");
              });
          }
          if(stat==="update")
          {
-            axios.post('/main/find/fid/'+fid, userOuter)
+            await axios.post('/main/find/fid/'+fid, userOuter)
             .then(res => { navigate("/outer");
             });
          }

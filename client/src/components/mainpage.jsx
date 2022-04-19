@@ -13,7 +13,7 @@ import axios from 'axios';
 // import { faUser,faLock } from '@fortawesome/free-solid-svg-icons';
 // import Navbar from  "./navbar";
 // import logo from "../images/logo.jpg";
-import logo from "../../public/images/logo.jpg";
+import logo from "../images/logo.jpg"
 import {  useParams } from "react-router-dom";
 import {useNavigate} from 'react-router-dom';
 import FormData from "form-data";

@@ -8,8 +8,7 @@ import { useParams } from 'react-router-dom';
  
 import { useEffect } from 'react';
 import axios from 'axios';
- 
-import logo from "../../public/images/logo.jpg";
+import logo from "../images/logo.jpg"
 import {useNavigate} from 'react-router-dom';
 import FormData from "form-data";
 import  Footer from "./footer";
@@ -489,7 +488,8 @@ function SubPage(){
                 <div className='subdiv21' style={{backgroundColor:"white",marginBottom:"30px"}}>
                    <div style={ecard}>
                         <p style={ehead}>{sub.inf0}</p>
-                          <img src={pic?pic:logo} alt="pic" style={eimage}/> 
+                          {/* <img src={pic?pic:logo} alt="pic" style={eimage}/>  */}
+                          <img src={logo} alt="pic" style={eimage}/> 
                           <p style={{fontSize:(sub.inf3/2)+"px",backgroundColor:sub.backgroundColor,textAlign:"left",height:"15px"}}>{sub.einf0.split(" ")[0]} {sub.einf0.split(" ")[1]}</p>
                           
                           <p style={ereg}>{sub.rl0}</p>
@@ -500,8 +500,8 @@ function SubPage(){
               <div><h4>Preview of event details</h4></div>
                 <div className='subdiv31' style={{backgroundColor:"white",marginBottom:"30px"}}>
                     <div style={ecardinf}>
-                            <img src={pic1?pic1:logo} alt="pic" style={eimage1}/> 
-                             
+                            {/* <img src={pic1?pic1:logo} alt="pic" style={eimage1}/>  */}
+                            <img src={logo} alt="pic" style={eimage1}/> 
                               <p style={ehead1}>{sub.einf0}</p>
 
                               {/* <p style={ereg1}>{sub.rl0}</p> */}

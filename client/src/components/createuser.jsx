@@ -27,7 +27,7 @@ function DisplayInfo (){
    
     // useEffect(()=>{
   
-    axios.get('http://localhost:5000/users/info')
+    axios.get('../../../users/info')
     .then(response => {
        
       setInfo(response.data); 
@@ -65,7 +65,7 @@ function CreateUser () {
           
           console.log(user);
            
-          axios.post('http://localhost:5000/users/add', user)
+          axios.post('/users/add', user)
             .then(res => {console.log(res.data)
             ReactSession.set("username", res.data);
             localStorage.setItem("username", res.data);

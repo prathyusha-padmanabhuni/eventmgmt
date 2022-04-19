@@ -28,7 +28,7 @@ function Mainpage(){
      
       useEffect(()=>{
         if(fid!=="0"){
-          axios.get('http://localhost:5000/main/info1/fid/'+fid)
+          axios.get('/info1/fid/'+fid)
           .then(response => { 
             setOuter({backgroundColor:response.data.backgroundColor,
               backgroundPhoto:"",
@@ -128,13 +128,13 @@ function Mainpage(){
            
           if(stat==="create")
           {
-          axios.post('http://localhost:5000/main/add/uid/'+localStorage.getItem("username"), userOuter)
+          axios.post('/main/add/uid/'+localStorage.getItem("username"), userOuter)
             .then(res => { navigate("/outer");
              });
          }
          if(stat==="update")
          {
-            axios.post('http://localhost:5000/main/find/fid/'+fid, userOuter)
+            axios.post('/main/find/fid/'+fid, userOuter)
             .then(res => { navigate("/outer");
             });
          }

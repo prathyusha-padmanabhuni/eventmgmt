@@ -51,7 +51,7 @@ function View(){
     const [info, setInfo] = useState([]);
     useEffect(()=>{
     
-        axios.get('http://localhost:5000/sub/info1/fid/'+cid)
+        axios.get('/sub/info1/fid/'+cid)
         .then(response => { 
           setInfo(Object.values(response.data.reginfo));
              

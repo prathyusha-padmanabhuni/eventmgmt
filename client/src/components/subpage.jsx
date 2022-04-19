@@ -40,7 +40,7 @@ function SubPage(){
 
       useEffect(()=>{
         if(cid!=="0"){
-          axios.get('http://localhost:5000/sub/info1/fid/'+cid)
+          axios.get('/sub/info1/fid/'+cid)
           .then(response => { 
             setSub({backgroundColor:response.data.backgroundColor,
               backgroundPhoto:"",
@@ -189,14 +189,14 @@ function SubPage(){
           userSub.append("reginfo",sub.reginfo)
           
           if(cid==="0"){
-          axios.post('http://localhost:5000/sub/add/'+fid, userSub)
+          axios.post('/sub/add/'+fid, userSub)
             .then(res => {console.log(res.data)
               navigate("/Mainpage/Sub/"+fid);
              
              });
             }
           else{
-            axios.post('http://localhost:5000/sub/find/fid/'+cid, userSub)
+            axios.post('/sub/find/fid/'+cid, userSub)
             .then(res => { navigate("/Mainpage/Sub/"+fid);
             });
             }

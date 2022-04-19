@@ -15,13 +15,13 @@ import Navbar1 from "./navbar1";
 var bg=""
  
 function DisplayMainInfo (){
-    var pic="http://localhost:5000/public/images/";
+    var pic="/public/images/";
     const { fid} = useParams();
     const [props, setInfo] = useState([]);
        
        useEffect(()=>{
     
-       axios.get('http://localhost:5000/main/info1/fid/'+fid)
+       axios.get('/main/info1/fid/'+fid)
       .then(response => { 
           
           setInfo(response.data); })
@@ -130,14 +130,14 @@ function DisplayMainInfo (){
                
 }
 function deleteevent(fid,id){
-    axios.delete('http://localhost:5000/sub/fid/'+fid+'/eve/'+id)
+    axios.delete('/sub/fid/'+fid+'/eve/'+id)
       .then(response => { 
           if(response.data==="deleted")
           window.location.reload(false);
       } )
 }
 function Usersubinfo( props ) {
-    var pic="http://localhost:5000/public/images/";
+    var pic="/public/images/";
     var bgp=pic+props.backgroundPhoto
     var bg="white"
     const { fid} = useParams();
@@ -235,7 +235,7 @@ function DisplaySubInfo (){
     const [info, setInfo] = useState([]);
     useEffect(()=>{
     
-        axios.get('http://localhost:5000/sub/info/cid/'+fid)
+        axios.get('/sub/info/cid/'+fid)
         .then(response => { 
           setInfo(response.data);
            

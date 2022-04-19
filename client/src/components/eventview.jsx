@@ -94,7 +94,7 @@ function View1(){
     const [info, setInfo] = useState([]);	
   const { fid} = useParams();	
 		useEffect(()=>{
-			axios.get('http://localhost:5000/main/info1/fid/'+fid)
+			axios.get('/main/info1/fid/'+fid)
 			.then(response => { 
 					if(response.data)
 							setInfo(response.data); 
@@ -106,7 +106,7 @@ function View2(){
     const [info, setInfo] = useState([]);	
     const {cid} = useParams();
     useEffect(()=>{
-        axios.get('http://localhost:5000/sub/info1/fid/'+cid)
+        axios.get('/sub/info1/fid/'+cid)
         .then(response => { 
                 if(response.data)
                         setInfo(response.data); 

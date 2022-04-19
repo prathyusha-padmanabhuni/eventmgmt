@@ -45,7 +45,7 @@ function Inpdata(props,fid){
         alert('already registered')
       }
       else{
-      axios.post('http://localhost:5000/sub/addmail',data)
+      axios.post('/sub/addmail',data)
                 .then(res => {console.log(res.data)})
       }
       // console.log(localStorage.getItem("client"))
@@ -268,7 +268,7 @@ function DisplayPart1(){
 	const [info, setInfo] = useState([]);	
   const { fid} = useParams();	
 		useEffect(()=>{
-			axios.get('http://localhost:5000/main/info1/fid/'+fid)
+			axios.get('/main/info1/fid/'+fid)
 			.then(response => { 
 					if(response.data)
 							setInfo(response.data); 
@@ -281,7 +281,7 @@ function DisplayPart2(){
   
   const { fid} = useParams();	
 		useEffect(()=>{
-			axios.get('http://localhost:5000/sub/info/cid/'+fid)
+			axios.get('/sub/info/cid/'+fid)
 			.then(response => { 
 					if(response.data)  
 							setInfo(response.data); 

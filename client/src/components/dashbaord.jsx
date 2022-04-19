@@ -63,7 +63,7 @@ function Dashboard(){
     const [info, setInfo] = useState([]);
     useEffect(()=>{
     
-        axios.get('http://localhost:5000/sub/info/cid/'+fid)
+        axios.get('/sub/info/cid/'+fid)
         .then(response => { 
           setInfo(response.data);
              console.log(response.data)

@@ -16,10 +16,10 @@ import {useNavigate,Link } from 'react-router-dom';
 import Footer from "./footer";
  
 // import SubPage from "./subpage" ;
-var pic="http://localhost:5000/public/images/";
+var pic="/public/images/";
 function deleteevent(id){
     
-    axios.delete('http://localhost:5000/main/del/uid/'+localStorage.getItem("username")+'/fid/'+id)
+    axios.delete('/main/del/uid/'+localStorage.getItem("username")+'/fid/'+id)
       .then(response => { 
           if(response.data==="deleted")
           window.location.reload(false);
@@ -98,7 +98,7 @@ function usermaininfo( props ) {
      
        useEffect(()=>{
     
-      axios.get('http://localhost:5000/main/info/uid/'+localStorage.getItem("username"))
+      axios.get('/main/info/uid/'+localStorage.getItem("username"))
       .then(response => { 
           if(response.data)
               setInfo(response.data); 
@@ -115,7 +115,7 @@ function usermaininfo( props ) {
   }
   function AddLink(link){
    
-  axios.get('http://localhost:5000/main/fid/'+link+'/uid/'+localStorage.getItem("username"))
+  axios.get('/main/fid/'+link+'/uid/'+localStorage.getItem("username"))
       .then(response => { 
           if(response.data==="added")
           window.location.reload(false);

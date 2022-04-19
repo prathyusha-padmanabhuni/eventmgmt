@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
  
-import logo from "../../public/images/logo/jpg";
+import logo from "../../public/images/logo.jpg";
 import {useNavigate} from 'react-router-dom';
 import FormData from "form-data";
 import  Footer from "./footer";

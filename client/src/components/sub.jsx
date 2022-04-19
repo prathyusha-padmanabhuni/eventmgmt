@@ -11,7 +11,7 @@ import { Link,useParams  } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {   faEdit, faEye,faTrash} from '@fortawesome/free-solid-svg-icons';
 import Navbar1 from "./navbar1";
-import logo from "../../public/images/logo.jpg";
+ 
 var bg=""
  
 function DisplayMainInfo (){

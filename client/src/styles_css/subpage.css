@@ -1,0 +1,93 @@
+.maindiv{
+    display: flex;
+}
+.heading1{
+    height:40px;
+    text-align: left;
+    background-color:rgb(237, 182, 242) ;
+    margin:0 6% 0% 6%;
+    padding:2% 0% 0% 4%;
+    font-size: 18px;
+      font-weight: 500;
+     font-family:'fantasy';
+    
+}
+.subdiv1{
+    flex:1.5;
+    padding:3% 0 0  0%;
+    min-height: 500px;
+    text-align:left
+    /* margin:0% 25% 0% 30%; */
+    /* padding: 3% 0% 0% 10%; */
+    /* background-color: rgb(201, 149, 204); */
+     
+    /* box-shadow: 7px 7px 5px 3px rgb(149, 145, 150); */
+    /* border-radius: 55px; */
+    
+}
+.subdiv1 input {
+    display: block;
+}
+.subdiv1 form{
+    background-color:rgb(238, 221, 240) ;
+     
+    margin:0 6% 0% 6%;
+    min-height: 480px;
+    padding:5% 0 0 3%;
+     
+}
+.subdiv1 input[type="color"] {
+   
+    opacity: 1;
+	display: block;
+	width: 40px;
+	height: 25px;
+	border: none;
+    /* background-color: black; */
+}
+.subdiv1 input[type="file"] {
+   
+    opacity: 1;
+	display: block;
+	width: 130px;
+	height: 25px;
+	border: none;
+    /* background-color: black; */
+}
+.subdiv1 input[type="number"] {
+    width:50px
+}
+.subdiv1 input[type="submit"]{
+    text-align: center;
+    margin: 6% 0 0 30%;
+    background-color: rgb(97, 42, 103);
+    color:white;
+}
+.subdiv2{
+    padding:0%;
+    flex:1;
+    
+    
+}
+.subdiv3{
+    padding:0%;
+    flex:1.5;
+    
+}
+
+.subdiv{
+    /* padding:0%; */
+   
+    width: 48%;
+}
+.subdiv21{
+    border: 1px solid black;
+    margin:2px;
+    min-height: 480px;
+}
+.subdiv31{
+    border: 1px solid black;
+   
+    margin:2px;
+    min-height: 480px;
+}

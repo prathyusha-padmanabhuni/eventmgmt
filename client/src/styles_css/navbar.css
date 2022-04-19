@@ -1,0 +1,41 @@
+.Navbarcss{
+    background-color: #6b5567;
+    min-height: 70px;
+    max-height:400px;
+    border-bottom: 5px solid rgb(188, 63, 199);
+}
+.Navbarcss img{
+    border-radius: 50%;
+    vertical-align:middle;
+    padding:10px 10px 10px 10px;
+    float:left;
+} 
+.Navbarcss h2{
+    padding-top: 17px;
+    margin-top: 0px;
+    float: left;
+    color: black;
+}
+.Navbarcss li{
+    display:inline;
+    padding:5%;
+    clear:left;
+}
+.Navbarcss li a{
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+    
+    font-size: 2rem;
+    font-weight:  bold
+}
+.Navbarcss li a:hover{
+    color:rgb(215, 22, 253);
+     
+}
+.Navbarcss ul{
+    margin-top: 0px;
+    padding-left: 75%;
+    padding-top:25px
+}
+ 
+ 

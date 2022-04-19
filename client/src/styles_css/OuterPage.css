@@ -1,0 +1,142 @@
+.headPart{
+    min-height:300px;
+    margin:20px;
+    border:1px black;
+    box-shadow: 1px 1px 5px 5px gray;
+    text-align:left;
+    /* display: flex; */
+    
+}  
+.heading{
+    padding:1.5% 0% 1.5% 6%;
+    color:black;
+    text-align:left;
+}
+.card1{
+    border:1px solid black;
+    margin:0% 0% 1% 8%;
+    width:10%;
+    min-height:150px;
+    float:left;
+    /* width:15% */
+    /* flex:1 */
+}
+.heading2{
+    /* background-color: black; */
+    margin-left: 55%;
+    margin-top: -4%;
+}
+.card2{
+    /* flex:4 */
+    /* width:"100%"; */
+    background-color: aliceblue;
+    margin-left: 28%;
+    margin-top: 2%;
+    /* margin-left: 5%; */
+    height:"300px";
+    display:"inline-block";
+}
+.card3{
+    display:"inline-block";
+    background-color: rgb(243, 215, 239);
+    height:150px;
+    width:130px;
+    float:left;
+    margin-left: 4%;
+    text-align: center;
+    padding-top: 0%;
+}
+.card11{
+    margin: 60% 30% 0% 30%;
+    border-top: 7px solid rgb(165, 78, 165);
+}
+.card12{
+    margin: -25% 0% 0% 47%;
+    height:55px;
+    border-left: 7px solid rgb(165, 78, 165);
+}
+.button{
+    text-align: center;
+    text-decoration: none;
+    border: none; 
+    width:50px;
+    height:25px;
+    margin:5px;
+}
+.view{
+    background-color:rgb(165, 78, 165); 
+    
+    margin-top: 9%;
+}
+.plus{
+    background-color:rgb(165, 78, 165); 
+    
+}
+.allmcard{
+    /* background-color: rgb(63, 63, 75); */
+    margin: 1.75rem;
+}
+.mcard{
+    width:250px;
+    height:300px;
+    /* background-color: rgb(105, 105, 123); */
+    margin: 2.25%;
+    display: inline-block;
+   
+}
+.mcard .header{
+    /* background-color: rgb(147, 147, 215); */
+    height:65px
+}
+.mcard .body{
+    /* background-color: rgb(83, 83, 192); */
+    height:205px;
+    padding: 30% 0 0 35%;
+}
+.mcard .body .preview{
+     width:70px;
+     height:25px;
+     background-color: rgb(233, 213, 237);
+     margin-bottom: 10px;
+     text-align: center;
+     border-radius: 10px;
+     box-shadow: 2px 2px 0 0 rgb(148, 143, 143);
+}
+.mcard .body .get{
+    width:70px;
+    height:25px;
+    background-color: rgb(222, 201, 227);
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0 0 rgb(148, 143, 143);
+}
+.mcard .footer{
+    /* background-color: rgb(23, 23, 92); */
+    height:30px
+}
+.mcard .footer .lin{
+    width:50%;
+    height:30px;
+    padding-top: 1%;
+    text-decoration: none;
+      
+    font-size: 18px;
+    text-align: center;
+    display: inline-block;
+    opacity:0.75
+}
+.mcard .footer .link{
+     color:black
+     
+     
+}
+.mcard .footer .add{
+    background-color: green;
+}
+.mcard .footer .delete{
+    background-color:rgb(200, 4, 4);
+}
+.mcard .footer .link:hover{
+    text-decoration: none;
+}

@@ -8,7 +8,6 @@ import { faUser,faLock } from '@fortawesome/free-solid-svg-icons';
 import {ReactSession} from 'react-client-session';
 import {useNavigate} from 'react-router-dom';
 import Navbar from  "./navbar";
-
 ReactSession.get("username");
 function LoginUser () {
     const [note, setNote] = useState({
@@ -31,7 +30,7 @@ function LoginUser () {
             uemail:note.email,
             upassword:note.password
           }
-          axios.post('http://localhost:5000/users/checkuser', user)
+          axios.post('../../../users/checkuser', user)
             // .then(res => console.log(res.data+"11111111111111")); 
             .then(res => {
               if(res.data!=="err"){

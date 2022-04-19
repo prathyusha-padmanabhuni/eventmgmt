@@ -11,7 +11,7 @@ import { Link,useParams  } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {   faEdit, faEye,faTrash} from '@fortawesome/free-solid-svg-icons';
 import Navbar1 from "./navbar1";
- 
+import logo from "../../public/images/logo/jpg";
 var bg=""
  
 function DisplayMainInfo (){
@@ -77,6 +77,7 @@ function DisplayMainInfo (){
               <div>
                     <div style={headr}>
                         <img src={pic+props.headerLogo} alt="logo" style={imgstyle}></img>
+                        {/* <img src={logo} alt="logo" style={imgstyle}></img> */}
                         <p style={headr}>{props.headerContent?props.headerContent[0]:"null"}</p>
                     </div>
                     <div style={bod}>

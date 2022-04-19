@@ -12,7 +12,8 @@ import axios from 'axios';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faUser,faLock } from '@fortawesome/free-solid-svg-icons';
 // import Navbar from  "./navbar";
-import logo from "../images/logo.jpg";
+// import logo from "../images/logo.jpg";
+import logo from "../../public/images/logo/jpg";
 import {  useParams } from "react-router-dom";
 import {useNavigate} from 'react-router-dom';
 import FormData from "form-data";
@@ -403,7 +404,7 @@ function Mainpage(){
                           <div className="carousel-inner" >
 
                               <div className="item active" style={{ backgroundColor:'rgb(203, 183, 211)'}}>
-                                  <img src={outer.profilepic?("/../images/"+outer.profilepic[0].name) :  logo} alt="Los" style={{width:"100%",height:"300px"  }}/>
+                                  <img src={logo} alt="Los" style={{width:"100%",height:"300px"  }}/>
                                    
                               </div>
 

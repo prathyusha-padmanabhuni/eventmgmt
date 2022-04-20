@@ -117,7 +117,7 @@ function usermaininfo( props ) {
   axios.get('/main/fid/'+link+'/uid/'+localStorage.getItem("username"))
       .then(response => { 
           if(response.data==="added")
-          window.location.reload(false);
+          navigate("/Mainpage/create/0")
       } )
     
   }

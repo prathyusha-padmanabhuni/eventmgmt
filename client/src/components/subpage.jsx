@@ -190,13 +190,15 @@ function SubPage(){
           if(cid==="0"){
           await axios.post('/sub/add/'+fid, userSub)
             .then(res => { 
-              navigate("/Mainpage/Sub/"+fid);
+              console.log(res.data)
+              // navigate("/Mainpage/Sub/"+fid);
              });
             }
           else{
             await axios.post('/sub/find/fid/'+cid, userSub)
             .then(res => { 
-              navigate("/Mainpage/Sub/"+fid);
+              console.log(res.data)
+              // navigate("/Mainpage/Sub/"+fid);
             });
             }
           

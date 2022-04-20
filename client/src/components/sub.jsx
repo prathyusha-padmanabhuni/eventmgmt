@@ -15,7 +15,7 @@ import Navbar1 from "./navbar1";
 var bg=""
  
 function DisplayMainInfo (){
-    var pic="/public/images/";
+    var pic="../../public/images/";
     const { fid} = useParams();
     const [props, setInfo] = useState([]);
        
@@ -138,7 +138,7 @@ async function deleteevent(fid,id){
       } )
 }
 function Usersubinfo( props ) {
-    var pic="/public/images/";
+    var pic="../../public/images/";
     var bgp=pic+props.backgroundPhoto
     var bg="white"
     const { fid} = useParams();

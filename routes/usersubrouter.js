@@ -2,13 +2,15 @@ const router = require('express').Router();
 let UserMain = require('../models/usermainmodel'); 
 let UserSub = require('../models/usersubmodel');
 var multer=require('multer');
+var path=require("path");
 // import "../client/public/images"
  
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       // cb(null, 'C:/Users/riktam/Desktop/eventmngmnt/public/images')
      
-      cb(null,'../backend/client/public/images')
+       
+      cb(null,path.join(__dirname,'../client/public/images'))
       // C:\Users\riktam\Desktop\eventmngmnt\backend\client\public\images
       
     },

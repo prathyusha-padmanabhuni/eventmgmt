@@ -117,7 +117,7 @@ function usermaininfo( props ) {
   axios.get('/main/fid/'+link+'/uid/'+localStorage.getItem("username"))
       .then(response => { 
           if(response.data==="added")
-          navigate("/Mainpage/create/0")
+          navigate("/outer")
       } )
     
   }
@@ -136,27 +136,27 @@ function usermaininfo( props ) {
               <div className="card2">
                 <div className="card21 card3">
                     <h5>FEST</h5>
-                    <button onClick={()=> window.location.href="https://eventrktm.herokuapp.com/CURSORS_2K22/625e08e51ca602da5b1fd349"} className='view button'>view</button><br></br>
+                    <button onClick={()=>  navigate("/CURSORS_2K22/625e08e51ca602da5b1fd349") } className='view button'>view</button><br></br>
                     <button onClick={()=>AddLink("625e08e51ca602da5b1fd349")} className='plus button'>+</button>
                 </div>
                 <div className="card22 card3">
                     <h5>BLOG</h5>
-                    <button onClick={()=> window.location.href="https://eventrktm.herokuapp.com/MOBILES/625e1eff1ca602da5b1fd414"} className='view button'>view</button><br></br>
+                    <button onClick={()=>navigate("/MOBILES/625e1eff1ca602da5b1fd414")} className='view button'>view</button><br></br>
                     <button onClick={()=>AddLink("625e1eff1ca602da5b1fd414")} className='plus button'>+</button>
                 </div>
                 <div className="card23 card3">
                     <h5>REVIEWS</h5>
-                    <button onClick={()=> window.location.href="https://eventrktm.herokuapp.com/REVIEWS/625e273c1ca602da5b1fd461"} className='view button'>view</button><br></br>
+                    <button onClick={()=> navigate("/REVIEWS/625e273c1ca602da5b1fd461")} className='view button'>view</button><br></br>
                     <button onClick={()=>AddLink("625e273c1ca602da5b1fd461")} className='plus button'>+</button>
                 </div>
                 <div className="card23 card3">
                     <h5>PLACES</h5>
-                    <button onClick={()=> window.location.href="https://eventrktm.herokuapp.com/Nearby%20NRPM/625e2d091ca602da5b1fd490"} className='view button'>view</button><br></br>
+                    <button onClick={()=> navigate("/Nearby%20NRPM/625e2d091ca602da5b1fd490")} className='view button'>view</button><br></br>
                     <button onClick={()=>AddLink("625e2d091ca602da5b1fd490")} className='plus button'>+</button>
                 </div>
                 <div className="card23 card3">
                     <h5>RESTUARANTS</h5>
-                    <button onClick={()=> window.location.href="https://eventrktm.herokuapp.com/RESTUARANTS/625e307c1ca602da5b1fd4b6"} className='view button'>view</button><br></br>
+                    <button onClick={()=> navigate("/RESTUARANTS/625e307c1ca602da5b1fd4b6")} className='view button'>view</button><br></br>
                     <button onClick={()=>AddLink("625e307c1ca602da5b1fd4b6")} className='plus button'>+</button>
                 </div>
                  

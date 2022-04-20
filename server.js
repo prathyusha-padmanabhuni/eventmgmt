@@ -4,13 +4,15 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
- 
+const path=require("path");
 app.use(cors());
 app.use(express.json());
 // app.use('/public',express.static("C:/Users/riktam/Desktop/eventmngmnt/public"));
 // console.log(path.join(__dirname+"/public"))
-// app.use(express.static(path.join(__dirname , "/../public")))
+// app.use(express.static(path.join(__dirname , `/client/public`)))
+console.log(path.join(__dirname , `./client/public`))
 // console.log(path.join(__dirname , "/../public"))
+ 
 app.use('/public',express.static("./client/public"));
 const uri ="mongodb+srv://admin-prathyu:Prathyusha123@cluster0.l7q0r.mongodb.net/eventmgt";
  

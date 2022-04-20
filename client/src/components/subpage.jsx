@@ -62,7 +62,7 @@ function SubPage(){
           } )
         }
           
-        
+        console.log("prathyusha")
       },[])
       
 
@@ -189,14 +189,14 @@ function SubPage(){
           
           if(cid==="0"){
           await axios.post('/sub/add/'+fid, userSub)
-            .then(res => {console.log(res.data)
+            .then(res => { 
               navigate("/Mainpage/Sub/"+fid);
-             
              });
             }
           else{
             await axios.post('/sub/find/fid/'+cid, userSub)
-            .then(res => { navigate("/Mainpage/Sub/"+fid);
+            .then(res => { 
+              navigate("/Mainpage/Sub/"+fid);
             });
             }
           

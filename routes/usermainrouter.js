@@ -6,7 +6,9 @@ let UserSub = require('../models/usersubmodel');
 var multer=require('multer');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'C:/Users/riktam/Desktop/eventmngmnt/public/images')
+      // cb(null, 'C:/Users/riktam/Desktop/eventmngmnt/public/images')
+      cb(null,'../backend/client/public/images')
+      console.log("123")
     },
     filename: function (req, file, cb) {
       cb(null, Date.now()+'_'+file.originalname)
@@ -136,7 +138,7 @@ router.route('/fid/:fid/uid/:uid').get((req, res) => {
       .catch(err => res.status(400).json('Error: ' + err));
 });
 router.route('/add/uid/:uid').post(uploadMultiple,(req, res) => {
-   
+   console.log("entered")
      var s=""
      if(req.files['profilepic']){
        for(var i=0;i<req.files['profilepic'].length;i++){ 
@@ -177,7 +179,7 @@ router.route('/add/uid/:uid').post(uploadMultiple,(req, res) => {
         user.first_page.push( newUserMain._id);
         user.save()
         .then(() => res.json(newUserMain._id))
-         
+         console.log("saved")
       })
       .catch((e) => {
         res.send(e).status(404);

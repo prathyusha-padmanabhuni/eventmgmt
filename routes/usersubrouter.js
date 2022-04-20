@@ -2,9 +2,15 @@ const router = require('express').Router();
 let UserMain = require('../models/usermainmodel'); 
 let UserSub = require('../models/usersubmodel');
 var multer=require('multer');
+// import "../client/public/images"
+ 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'C:/Users/riktam/Desktop/eventmngmnt/public/images')
+      // cb(null, 'C:/Users/riktam/Desktop/eventmngmnt/public/images')
+     
+      cb(null,'../backend/client/public/images')
+      // C:\Users\riktam\Desktop\eventmngmnt\backend\client\public\images
+      
     },
     filename: function (req, file, cb) {
       cb(null, Date.now()+'_'+file.originalname)
@@ -65,7 +71,7 @@ const storage = multer.diskStorage({
 
 var uploadMultiple = upload.fields([{ name: 'backgroundPhoto'}, { name: 'profile' } ])
 router.route('/add/:fid').post(uploadMultiple,(req, res) => {
-   
+   console.log("add")
 	const  backgroundColor = req.body.backgroundColor;
     const  backgroundPhoto = (req.files)?req.files['backgroundPhoto'][0].filename:null;
     const  inf0 = req.body.inf0;

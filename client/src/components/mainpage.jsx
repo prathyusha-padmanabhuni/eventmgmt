@@ -95,7 +95,7 @@ function Mainpage(){
       function handleChangeImages(event){
         
         const name=event.target.name;
-          
+          console.log(name,event.target.files)
         setOuter((prevNote) => {
             
              
@@ -127,18 +127,20 @@ function Mainpage(){
           userOuter.append("iF1",outer.iF1)
           userOuter.append("iF2",outer.iF2)
           userOuter.append("iF3",outer.iF3)
-           
+          console.log(userOuter) 
           if(stat==="create")
           {
           await axios.post('/main/add/uid/'+localStorage.getItem("username"), userOuter)
-            .then(res => { navigate("/outer");
-             });
+            .then(res => {
+              //  navigate("/outer");
+             }).catch("err")
          }
          if(stat==="update")
          {
             await axios.post('/main/find/fid/'+fid, userOuter)
-            .then(res => { navigate("/outer");
-            });
+            .then(res => {    
+              // navigate("/outer");
+            }).catch("err")
          }
             //  axios.post('http://localhost:5000/main/, userOuter)
             //  .then(res => {console.log(res.data)

@@ -12,16 +12,16 @@ import {   faEdit } from '@fortawesome/free-solid-svg-icons';
 // import Navbar from  "./navbar";
  
 import {useNavigate,Link } from 'react-router-dom';
- 
 import Footer from "./footer";
 // import SubPage from "./subpage" ;
-var pic="../../public/images/";
+ var pic="../../public/images/";
+ 
 async function Deleteevent(id){
   
     await axios.delete('/main/del/uid/'+localStorage.getItem("username")+'/fid/'+id)
       .then(response => { 
           if(response.data==="deleted")
-              alert("deletd")
+              alert("deletd,please refresh the page")
       } )
 }
 function usermaininfo( props ) {
@@ -117,7 +117,7 @@ function usermaininfo( props ) {
   axios.get('/main/fid/'+link+'/uid/'+localStorage.getItem("username"))
       .then(response => { 
           if(response.data==="added")
-          navigate("/outer")
+           alert("added,please refresh the page")
       } )
     
   }

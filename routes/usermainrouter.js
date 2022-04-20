@@ -4,18 +4,23 @@ let UserMain = require('../models/usermainmodel');
 let User=require('../models/usermodel');
 let UserSub = require('../models/usersubmodel');
 var multer=require('multer');
+var path=require("path");
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       // cb(null, 'C:/Users/riktam/Desktop/eventmngmnt/public/images')
-      cb(null,'../backend/client/public/images')
-      console.log("123")
+      // cb(null,'../backend/client/public/images')
+      cb(null,path.join(__dirname,'../client/public/images'))
+      // app.use('/image', express.static(path.join(__dirname, '/image')));
+       
     },
     filename: function (req, file, cb) {
+      
       cb(null, Date.now()+'_'+file.originalname)
     }
   })
   
   var upload = multer({ storage:storage});
+   
   //   fileFilter :function(req,file,callback){
   //     if(file.mimetype ==="image/png" || file.mimetype==="image/jpg"){
   //       callback(null,true)

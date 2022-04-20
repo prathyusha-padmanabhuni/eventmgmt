@@ -18,7 +18,6 @@ import {  useParams } from "react-router-dom";
 import {useNavigate} from 'react-router-dom';
 import FormData from "form-data";
 import  Footer from "./footer";
- 
 
 // import SubPage from "./subpage" ;
 function Mainpage(){
@@ -105,7 +104,7 @@ function Mainpage(){
             };
           });
       }
-      async function submitOuter(event) {
+      function submitOuter(event) {
         
         
           const userOuter=new FormData();
@@ -130,17 +129,17 @@ function Mainpage(){
           console.log(userOuter) 
           if(stat==="create")
           {
-          await axios.post('/main/add/uid/'+localStorage.getItem("username"), userOuter)
+            axios.post('/main/add/uid/'+localStorage.getItem("username"), userOuter)
             .then(res => {
-              //  navigate("/outer");
-             }).catch("err")
+              console.log(res.data)
+             }) 
          }
          if(stat==="update")
          {
-            await axios.post('/main/find/fid/'+fid, userOuter)
+           axios.post('/main/find/fid/'+fid, userOuter)
             .then(res => {    
-              // navigate("/outer");
-            }).catch("err")
+              console.log(res.data)
+            }) 
          }
             //  axios.post('http://localhost:5000/main/, userOuter)
             //  .then(res => {console.log(res.data)

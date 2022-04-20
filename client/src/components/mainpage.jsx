@@ -129,14 +129,14 @@ function Mainpage(){
           console.log(userOuter) 
           if(stat==="create")
           {
-            axios.post('/main/add/uid/'+localStorage.getItem("username"), userOuter)
+            axios.post('../../../main/add/uid/'+localStorage.getItem("username"), userOuter)
             .then(res => {
               console.log(res.data)
              }) 
          }
          if(stat==="update")
          {
-           axios.post('/main/find/fid/'+fid, userOuter)
+           axios.post('../../../main/find/fid/'+fid, userOuter)
             .then(res => {    
               console.log(res.data)
             }) 

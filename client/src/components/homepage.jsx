@@ -3,12 +3,12 @@ import '../styles_css/signup.css';
 import logo from "../images/logo.jpg";
 import   '../styles_css/navbar.css';
 import { Link  } from 'react-router-dom';
- 
+import {useNavigate} from 'react-router-dom';
  
 
 
 function HomePage(){
-     
+    let navigate=useNavigate();
     const [colour, setColour] = useState("#fafafa");
     const [colour1, setColour1] = useState("#fafafa");
         const slide1={
@@ -77,7 +77,7 @@ function HomePage(){
                 </div>
 
                 <div className="item" style={{ height:"400px"}}>
-                    <img src="../../public/images/vanjangi.jpg" alt="Chic" style={{width:"100%" ,height:"400px"}} onClick={()=>window.open("http://localhost:3000/Nearby%20NRPM/625e2d091ca602da5b1fd490")}/>
+                    <img src="../../public/images/vanjangi.jpg" alt="Chic" style={{width:"100%" ,height:"400px"}} onClick={()=>navigate("/Nearby%20NRPM/625e2d091ca602da5b1fd490")}/>
                     <div className="carousel-caption">
                     {/* <h3>Chicago</h3>
                     <p>Thank you, Chicago!</p> */}
@@ -85,7 +85,7 @@ function HomePage(){
                 </div>
                 
                 <div className="item" style={{ height:"400px"}}>
-                    <img src="../../public/images/cursor12.PNG" alt="New " style={{width:"100%",height:"400px" }}  onClick={()=>window.open("http://localhost:3000/CURSORS_2K22/625e08e51ca602da5b1fd349")}/>
+                    <img src="../../public/images/cursor12.PNG" alt="New " style={{width:"100%",height:"400px" }}  onClick={()=>navigate("/CURSORS_2K22/625e08e51ca602da5b1fd349")}/>
                     <div className="carousel-caption">
                     {/* <h3>New York</h3>
                     <p>We love the Big Apple!</p> */}

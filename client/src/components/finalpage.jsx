@@ -244,7 +244,7 @@ function Userpart2info(props){
               <div style={fotr}>
                   <div style={{textAlign:"left",paddingLeft:"5px",height:"30px",paddingTop:"5px"}}>{props.prop.eveinformation?props.prop.eveinformation[0].split(" ")[0]:"date"}  :  {props.prop.eveinformation?props.prop.eveinformation[0].split(" ")[1]:"2022"}</div>
                   {/* <div style={ereg}><button   style={{color:"black",backgroundColor:props.reglink[2]}}  >{props.reginfo[3]?props.reginfo[3]:"register"}</button></div> */}
-                  <div style={ereg} onClick={()=>Inpdata(props)}>{props.reglink?props.reglink[0]:"register"}</div>
+                  {/* <div style={ereg} onClick={()=>Inpdata(props)}>{props.reglink?props.reglink[0]:"register"}</div> */}
 
                   <div style={ereg} onClick={()=> 
                     {

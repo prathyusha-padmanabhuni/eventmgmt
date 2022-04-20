@@ -8,7 +8,7 @@ import {ReactSession} from 'react-client-session';
 import {useNavigate} from 'react-router-dom';
 import logo from "../../images/logo.jpg";
  
- 
+//  import logo from "../../images/"
  
 function SubNavbar (props) {
     //<Link to="/user" className="nav-link">Create User</Link>
@@ -25,7 +25,7 @@ function SubNavbar (props) {
 
          }
         
-         var pic="../../images/"+props.outer.headerLogo.name
+        //  var pic="../../images/"+props.outer.headerLogo.name
           
         return (
              <div className="Navbarcs" style={navbar} >

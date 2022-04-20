@@ -27,11 +27,12 @@ function Mainpage(){
      
      
      
-      useEffect(()=>{
-        if(fid!=="0"){
-          axios.get('/info1/fid/'+fid)
+       useEffect(()=>{
+        // if(fid!=="0"){
+          
+           axios.get('main/info1/fid/'+fid)
           .then(response => { 
-            setOuter({backgroundColor:response.data.backgroundColor,
+            setOuter({backgroundColor:response.data.backgroundColor?response.data.backgroundColor:"#ffffff",
               backgroundPhoto:"",
               headerBottom:response.data.headerBottom,
               headercolor:response.data.headercolor,
@@ -47,7 +48,7 @@ function Mainpage(){
               profilepic:""
              });
           } )
-        }
+        // }
           
         
       },[])

@@ -16,12 +16,12 @@ import {useNavigate,Link } from 'react-router-dom';
 import Footer from "./footer";
 // import SubPage from "./subpage" ;
 var pic="../../public/images/";
-async function deleteevent(id){
-    
+async function Deleteevent(id){
+  let navigate=useNavigate();
     await axios.delete('/main/del/uid/'+localStorage.getItem("username")+'/fid/'+id)
       .then(response => { 
           if(response.data==="deleted")
-          window.location.reload(false);
+              navigate("/outer")
       } )
 }
 function usermaininfo( props ) {
@@ -84,7 +84,7 @@ function usermaininfo( props ) {
           </div>
           <div className="footer">
               <div className="lin add"><Link to={"/Mainpage/Sub/"+props._id} className="link" >+ Event -</Link></div>
-              <div className="lin delete"><Link to="/outer" className="link" onClick={()=>deleteevent(props._id)}>Delete</Link></div>
+              <div className="lin delete"><Link to="/outer" className="link" onClick={()=>Deleteevent(props._id)}>Delete</Link></div>
           </div>
           
          </div>

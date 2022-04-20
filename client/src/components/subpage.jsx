@@ -224,8 +224,8 @@ function SubPage(){
         });
         event.preventDefault();
       }
-      var pic="/../images/"+sub.backgroundPhoto.name;
-      var pic1="/../images/"+sub.profile.name;
+      // var pic="/../images/"+sub.backgroundPhoto.name;
+      // var pic1="/../images/"+sub.profile.name;
     if(localStorage.getItem("username"))   
     return(
     <div>

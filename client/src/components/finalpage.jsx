@@ -53,7 +53,7 @@ function Inpdata(props,fid){
 }
 function Userpart1info(props){
   const {fid} = useParams();	
-  var pic="../images/";
+  var pic="../../public/images/";
   const headr={     
     width:"100%",
     height:"70px",
@@ -152,7 +152,7 @@ function Userpart2info(props){
   let navigate=useNavigate();
   const [reg, setReg] = useState(props.prop.reglink[0]);	 
   const {fid} = useParams();
-  var pic="../images/";
+  var pic="../../public/images/";
   var bgp=pic+props.prop.backgroundPhoto
 
   const mcard={

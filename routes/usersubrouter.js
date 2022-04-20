@@ -106,7 +106,7 @@ router.route('/add/:fid').post(uploadMultiple,(req, res) => {
         usermain.second_page.push(newUserSub._id);
         usermain.save()
           .then(() => res.json(newUserSub ))
-          // console.log(usermain)
+           console.log("done")
           })
         .catch((e) => {
         res.send(e).status(404);

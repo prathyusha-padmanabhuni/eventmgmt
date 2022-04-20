@@ -4,7 +4,7 @@ import axios from 'axios';
  
 import Footer from './footer';
 var ad={}
-var pic="/../images/";
+var pic="../../public/images/";
 var hcolor="#6a3e3e";
 function Userpart1info(props){
     const {fid} = useParams();	

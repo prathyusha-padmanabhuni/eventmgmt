@@ -132,6 +132,7 @@ function Mainpage(){
             axios.post('../../../main/add/uid/'+localStorage.getItem("username"), userOuter)
             .then(res => {
               console.log(res.data)
+              alert('added new page,go to "minapage"')
              }) 
          }
          if(stat==="update")
@@ -139,6 +140,7 @@ function Mainpage(){
            axios.post('../../../main/find/fid/'+fid, userOuter)
             .then(res => {    
               console.log(res.data)
+              alert('added new page,go to "minapage"')
             }) 
          }
             //  axios.post('http://localhost:5000/main/, userOuter)
@@ -369,7 +371,7 @@ function Mainpage(){
                        </tbody>
                      </table>
                      
-                    <h5>Add max 4 photos</h5>
+                    <h5>Add min 4 photos</h5>
                     <input
                      type="file"
                       multiple

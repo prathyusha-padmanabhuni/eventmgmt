@@ -191,6 +191,7 @@ function SubPage(){
              axios.post('/sub/add/'+fid, userSub)
             .then(res => { 
               console.log(res.data)
+              alert('added new event,go to "minapage"')
               // navigate("/Mainpage/Sub/"+fid);
              });
             }
@@ -198,6 +199,7 @@ function SubPage(){
              axios.post('/sub/find/fid/'+cid, userSub)
             .then(res => { 
               console.log(res.data)
+              alert('added new event,go to "minapage"')
               // navigate("/Mainpage/Sub/"+fid);
             });
             }

@@ -19,7 +19,7 @@ import {useNavigate} from 'react-router-dom';
 import FormData from "form-data";
 import  Footer from "./footer";
  
- 
+
 // import SubPage from "./subpage" ;
 function Mainpage(){
     let navigate=useNavigate();
@@ -30,7 +30,7 @@ function Mainpage(){
        useEffect(()=>{
         // if(fid!=="0"){
           
-           axios.get('main/info1/fid/'+fid)
+           axios.get('/main/info1/fid/'+fid)
           .then(response => { 
             setOuter({backgroundColor:response.data.backgroundColor?response.data.backgroundColor:"#ffffff",
               backgroundPhoto:"",

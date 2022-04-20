@@ -30,7 +30,7 @@ function LoginUser () {
             uemail:note.email,
             upassword:note.password
           }
-          axios.post('../../../users/checkuser', user)
+          axios.post('/users/checkuser', user)
             // .then(res => console.log(res.data+"11111111111111")); 
             .then(res => {
               if(res.data!=="err"){

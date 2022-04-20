@@ -79,7 +79,7 @@ function Userpart1info(props){
      
   }
   const bod={
-    backgroundColor:props.backgroundColor,
+    backgroundColor:props.backgroundColor?props.backgroundColor:"#ffffff",
     fontSize:props.infContent?(props.infContent[3])+"px":"20px",
     color:props.infContent?props.infContent[2]:"black",
     fontFamily:props.infContent?props.infContent[1]:"serif",
@@ -239,12 +239,12 @@ function Userpart2info(props){
           
           <div key={props.prop._id}   style={mcard}  > 
                 
-              <p style={inf}>{props.prop.information[0]?props.prop.information[0]:"event"}</p>
+              <p style={inf}>{props.prop.information?props.prop.information[0]:"event"}</p>
               <div style={card} onMouseEnter={() => setCursor(card2)}  onMouseLeave={() => setCursor(card1)} ><img src={bgp} alt="pic" style={{height:"300px",width:"250px"}}  onClick={()=>navigate("/eventview/"+fid+"/"+props.prop._id) } ></img></div>
               <div style={fotr}>
-                  <div style={{textAlign:"left",paddingLeft:"5px",height:"30px",paddingTop:"5px"}}>{props.prop.eveinformation[0]?props.prop.eveinformation[0].split(" ")[0]:"date"}  :  {props.prop.eveinformation[0]?props.prop.eveinformation[0].split(" ")[1]:"2022"}</div>
+                  <div style={{textAlign:"left",paddingLeft:"5px",height:"30px",paddingTop:"5px"}}>{props.prop.eveinformation?props.prop.eveinformation[0].split(" ")[0]:"date"}  :  {props.prop.eveinformation?props.prop.eveinformation[0].split(" ")[1]:"2022"}</div>
                   {/* <div style={ereg}><button   style={{color:"black",backgroundColor:props.reglink[2]}}  >{props.reginfo[3]?props.reginfo[3]:"register"}</button></div> */}
-                  <div style={ereg} onClick={()=>Inpdata(props)}>{props.reglink[0]?props.reglink[0]:"register"}</div>
+                  <div style={ereg} onClick={()=>Inpdata(props)}>{props.reglink?props.reglink[0]:"register"}</div>
 
                   <div style={ereg} onClick={()=> 
                     {

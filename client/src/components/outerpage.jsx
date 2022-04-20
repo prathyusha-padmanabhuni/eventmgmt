@@ -17,11 +17,11 @@ import Footer from "./footer";
 // import SubPage from "./subpage" ;
 var pic="../../public/images/";
 async function Deleteevent(id){
-  let nav=useNavigate();
+  
     await axios.delete('/main/del/uid/'+localStorage.getItem("username")+'/fid/'+id)
       .then(response => { 
           if(response.data==="deleted")
-              nav("/outer")
+              alert("deletd")
       } )
 }
 function usermaininfo( props ) {

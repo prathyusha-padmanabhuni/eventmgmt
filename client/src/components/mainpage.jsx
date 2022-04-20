@@ -28,7 +28,7 @@ function Mainpage(){
      
      
        useEffect(()=>{
-        // if(fid!=="0"){
+        if(fid!=="0"){
           
            axios.get('/main/info1/fid/'+fid)
           .then(response => { 
@@ -48,7 +48,7 @@ function Mainpage(){
               profilepic:""
              });
           } )
-        // }
+        }
           
         
       },[])
@@ -410,16 +410,16 @@ function Mainpage(){
                               </div>
 
                               <div className="item" style={{  }}>
-                                  <img src={outer.profilepic?("/../images/"+outer.profilepic[1].name) : logo} alt="Chic" style={{width:"100%" ,height:"300px" }}/>
+                                  <img src={logo} alt="Chic" style={{width:"100%" ,height:"300px" }}/>
                                   
                               </div>
                               
                               <div className="item" style={{  }}>
-                                  <img src={outer.profilepic?"/../images/"+outer.profilepic[2].name : logo} alt="New " style={{width:"100%",height:"300px"  }}/>
+                                  <img src={logo} alt="New " style={{width:"100%",height:"300px"  }}/>
                                    
                               </div>
                               <div className="item" style={{  }}>
-                                  <img src={outer.profilepic? "/../images/"+outer.profilepic[3].name :logo  } alt="New " style={{width:"100%",height:"300px"  }}/>
+                                  <img src={logo} alt="New " style={{width:"100%",height:"300px"  }}/>
                                    
                               </div>
                           </div>

@@ -134,7 +134,7 @@ async function deleteevent(fid,id){
     await axios.delete('/sub/fid/'+fid+'/eve/'+id)
       .then(response => { 
           if(response.data==="deleted")
-            alert("deleted,please refresh the page");
+            alert("Deleted, please refresh the page");
       } )
 }
 function Usersubinfo( props ) {

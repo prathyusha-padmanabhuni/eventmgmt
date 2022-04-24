@@ -21,7 +21,7 @@ async function Deleteevent(id){
     await axios.delete('/main/del/uid/'+localStorage.getItem("username")+'/fid/'+id)
       .then(response => { 
           if(response.data==="deleted")
-              alert("deletd,please refresh the page")
+              alert("Deletd, please refresh the page")
       } )
 }
 function usermaininfo( props ) {
@@ -117,7 +117,7 @@ function usermaininfo( props ) {
   axios.get('/main/fid/'+link+'/uid/'+localStorage.getItem("username"))
       .then(response => { 
           if(response.data==="added")
-           alert("added,please refresh the page")
+           alert("Added, please refresh the page")
       } )
     
   }
@@ -156,8 +156,8 @@ function usermaininfo( props ) {
                 </div>
                 <div className="card23 card3">
                     <h5>RESTUARANTS</h5>
-                    <button onClick={()=> navigate("/RESTUARANTS/625e307c1ca602da5b1fd4b6")} className='view button'>view</button><br></br>
-                    <button onClick={()=>AddLink("625e307c1ca602da5b1fd4b6")} className='plus button'>+</button>
+                    <button onClick={()=> navigate("/RESTUARANTS/6264de9e4cf158a5ecb1dfee")} className='view button'>view</button><br></br>
+                    <button onClick={()=>AddLink("6264de9e4cf158a5ecb1dfee")} className='plus button'>+</button>
                 </div>
                  
               </div>
@@ -167,7 +167,7 @@ function usermaininfo( props ) {
            <DisplayMainInfo />
            </div>
           {/* <div  onClick={ DisplayInfo}  ></div> */}
-          <Footer ftColor='#6b5567'/>
+          {/* <Footer ftColor='#6b5567'/> */}
         </div>
     );
     else

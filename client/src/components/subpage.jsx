@@ -12,27 +12,28 @@ import logo from "../images/logo.jpg"
 import {useNavigate} from 'react-router-dom';
 import FormData from "form-data";
 import  Footer from "./footer";
+import spinner from "../images/spinner.gif";
  
 function SubPage(){
   let navigate=useNavigate();
     const {fid,cid} = useParams();
-     
+    const [loading,setLoading] = useState(true)
     const [sub, setSub] = useState({
         backgroundColor: "#ffffff",
         backgroundPhoto: "",
         inf0: "",
-        inf1: "",
-        inf2: "#ffffff",
-        inf3: "",
+        inf1: "cursive",
+        inf2: "#000000",
+        inf3: "20",
         rl0 : "",
-        rl1 : "",
+        rl1 : "cursive",
         rl2 : "#ffffff",
-        rl3 : "",
+        rl3 : "20",
         rl4 : "",
         einf0: "",
-        einf1: "",
-        einf2: "#ffffff",
-        einf3: "",
+        einf1: "cursive",
+        einf2: "#000000",
+        einf3: "20",
        reginfo :  "",
         profile:""
       });
@@ -186,12 +187,14 @@ function SubPage(){
           userSub.append("einf2",sub.einf2)
           userSub.append("einf3",sub.einf3)
           userSub.append("reginfo",sub.reginfo)
-          
+          setLoading(false)
           if(cid==="0"){
              axios.post('/sub/add/'+fid, userSub)
             .then(res => { 
               console.log(res.data)
-              alert('added new event,go to "minapage"')
+              // alert('added new event,go to "minapage"')
+              setLoading(true)
+              navigate("/Mainpage/Sub/"+fid)
               // navigate("/Mainpage/Sub/"+fid);
              });
             }
@@ -199,7 +202,9 @@ function SubPage(){
              axios.post('/sub/find/fid/'+cid, userSub)
             .then(res => { 
               console.log(res.data)
-              alert('added new event,go to "minapage"')
+              // alert('added new event,go to "minapage"')
+              setLoading(true)
+              navigate("/Mainpage/Sub/"+fid)
               // navigate("/Mainpage/Sub/"+fid);
             });
             }
@@ -209,18 +214,18 @@ function SubPage(){
             backgroundColor: "#ffffff",
             backgroundPhoto: "",
             inf0: "",
-            inf1: "",
-            inf2: "#ffffff",
-            inf3: "",
+            inf1: "cursive",
+            inf2: "#000000",
+            inf3: "20",
             rl0 : "",
-            rl1 : "",
+            rl1 : "cursive",
             rl2 : "#ffffff",
-            rl3 : "",
+            rl3 : "20",
             rl4 : "",
             einf0: "",
-            einf1: "",
-            einf2: "#ffffff",
-            einf3: "",
+            einf1: "cursive",
+            einf2: "#000000",
+            einf3: "20",
            reginfo :  "",
             profile:""
         });
@@ -232,6 +237,8 @@ function SubPage(){
     return(
     <div>
         <Navbar1/>
+        {!loading?(<img src={spinner} alt="...loading" width="100px" height="100px" style={{margin:"5% 0 0 40%" }}  /> )
+        :(<div>
           <div className='maindiv'>
             <div className='subdiv1 subdiv' >  
               
@@ -514,6 +521,7 @@ function SubPage(){
             </div>
           </div>
           <Footer ftColor='#6b5567' />
+          </div>)}
     </div>);
 }
 export default SubPage;

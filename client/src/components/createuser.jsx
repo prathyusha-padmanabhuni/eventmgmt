@@ -8,8 +8,8 @@ import { faUser,faLock } from '@fortawesome/free-solid-svg-icons';
 import Navbar from  "./navbar";
 import {ReactSession} from 'react-client-session';
 import {useNavigate} from 'react-router-dom';
- 
-
+import spinner from "../images/spinner.gif";
+import Footer from "./footer";
 function userinfo( props ) {
   return(
     
@@ -44,7 +44,7 @@ function CreateUser () {
         password:"",
         confirmPassword:""
       });
-    
+    const [loading,setLoading] = useState(true)
       function handleChange(event) {
         const { name, value } = event.target;
     
@@ -64,12 +64,21 @@ function CreateUser () {
           }
           
           console.log(user);
-           
+          setLoading(false) 
           axios.post('/users/add', user)
-            .then(res => {console.log(res.data)
-            ReactSession.set("username", res.data);
-            localStorage.setItem("username", res.data);
-            navigate("/outer")})
+            .then(res => {
+            if(  res.data.length ===24)
+            {
+              ReactSession.set("username", res.data);
+              localStorage.setItem("username", res.data);
+              setLoading(true)
+              navigate("/outer")
+            }
+            else
+              alert(res.data)
+              setLoading(true)
+              navigate("/signUp")
+            })
             .catch(err=>alert(err))
             
           //window.location = '/';
@@ -81,9 +90,11 @@ function CreateUser () {
         });
         event.preventDefault();
       }
-       
+      if(!localStorage.getItem("username"))  
       return (
         <div>
+        {!loading?(<img src={spinner} alt="...loading" width="100px" height="100px" style={{margin:"5% 0 0 40%" }}  /> )
+        :(<div>
         <Navbar />  
         <div className="Signup">
               
@@ -140,7 +151,13 @@ function CreateUser () {
                
           </form>
         </div>
+        {/* <Footer ftColor='#6b5567'/> */}
+        </div>)
+        }
         </div>
       );
+      else{
+        return(<div style={{margin:"0 0 0 40%",paddingTop:"10%"}}>Already logged in try to logout by clicking logout <li><Link to="/logout" className="nav-link">logout</Link></li></div>);
+      }
 }
 export { CreateUser,DisplayInfo };

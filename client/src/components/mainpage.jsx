@@ -12,19 +12,21 @@ import axios from 'axios';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faUser,faLock } from '@fortawesome/free-solid-svg-icons';
 // import Navbar from  "./navbar";
-// import logo from "../images/logo.jpg";
+ 
+import spinner from "../images/spinner.gif";
 import logo from "../images/logo.jpg"
 import {  useParams } from "react-router-dom";
 import {useNavigate} from 'react-router-dom';
 import FormData from "form-data";
 import  Footer from "./footer";
-
+// import * as ReactBootStrap from 'react-bootstrap';
 // import SubPage from "./subpage" ;
+// <Spinner animation="border" variant="secondary" />
 function Mainpage(){
     let navigate=useNavigate();
     const {stat,fid} = useParams();
-     
-     
+    
+    const [loading,setLoading] = useState(true)
      
        useEffect(()=>{
         if(fid!=="0"){
@@ -56,16 +58,16 @@ function Mainpage(){
     const [outer, setOuter] = useState({
         backgroundColor: "#ffffff",
         backgroundPhoto:"",
-        headerBottom:"#ffffff",
+        headerBottom:"#000000",
         headercolor: "#ffffff",
         hC0: "",
-        hC1: "",
-        hC2: "#ffffff",
-        hC3: "",
+        hC1: "cursive",
+        hC2: "#000000",
+        hC3: "20",
         iF0: "",
-        iF1: "",
-        iF2: "#ffffff",
-        iF3: "",
+        iF1: "cursive",
+        iF2: "#000000",
+        iF3: "20",
         headerLogo:"",
         profilepic:""
       });
@@ -127,12 +129,16 @@ function Mainpage(){
           userOuter.append("iF2",outer.iF2)
           userOuter.append("iF3",outer.iF3)
           console.log(userOuter) 
+          setLoading(false)
+          
           if(stat==="create")
           {
             axios.post('../../../main/add/uid/'+localStorage.getItem("username"), userOuter)
             .then(res => {
               console.log(res.data)
-              alert('added new page,go to "minapage"')
+              setLoading(true)
+              navigate("/outer")
+              //  alert('added new page,go to "minapage"')
              }) 
          }
          if(stat==="update")
@@ -140,9 +146,17 @@ function Mainpage(){
            axios.post('../../../main/find/fid/'+fid, userOuter)
             .then(res => {    
               console.log(res.data)
-              alert('added new page,go to "minapage"')
+              setLoading(true)
+              navigate("/outer")
+              // alert('added new page,go to "minapage"')
             }) 
          }
+         
+        //  if(z)
+        //  {
+        //    setLoading(true)
+        //    alert('added new page,go to "minapage"')
+        //  }
             //  axios.post('http://localhost:5000/main/, userOuter)
             //  .then(res => {console.log(res.data)
             //   navigate("/Mainpage/SubPage")
@@ -153,16 +167,16 @@ function Mainpage(){
         setOuter({
             backgroundColor:  "#ffffff",
             backgroundPhoto:"",
-            headerBottom:"#ffffff",
+            headerBottom:"#000000",
             headercolor: "#ffffff",
             hC0:"",
-            hC1: "",
-            hC2: "#ffffff",
-            hC3: "",
+            hC1: "cursive",
+            hC2: "#000000",
+            hC3: "20",
             iF0: "",
-            iF1: "",
-            iF2: "#ffffff",
-            iF3: "",
+            iF1: "cursive",
+            iF2: "#000000",
+            iF3: "20",
             headerLogo: "",
             profilepic:""
         });
@@ -172,6 +186,10 @@ function Mainpage(){
     return(
       // <BrowserRouter>
     <div >
+      {/* <ReactBootStrap.Spinner animation="border" variant="secondary" /> */}{
+        !loading?
+      (<img src={spinner} alt="...loading" width="100px" height="100px" style={{margin:"5% 0 0 40%" }}  /> ):(
+        <div>
         <Navbar1/>
           <div className='mainDiv'>
             <div className='subDiv1 subDiv' >  
@@ -444,6 +462,7 @@ function Mainpage(){
             
           </div>
           <Footer ftColor='#6b5567' />
+          </div>)}
     </div>
     // </BrowserRouter>
     );

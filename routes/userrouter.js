@@ -12,18 +12,26 @@ router.route('/add').post((req, res) => {
 	const email = req.body.email;
 	const password= req.body.password;
   const confirmPassword = req.body.confirmPassword;
-  if(password === confirmPassword){
-    const newUser = new User({email,password});
-
-    newUser.save()
-      .then(() => res.json(newUser._id))
-      .catch(err => res.status(400).json('Error: ' + err));
-  }
+  User.findOne({email:email },(err,user)=>{
+  if(user)
+    return res.json("User already existed");
   else{
-      res.json("please check conform password")
+    if(password.length<=8)
+      return  res.json("Password length should be greater than 8");
+    else{
+      if(password === confirmPassword){
+        const newUser = new User({email,password});
+
+        newUser.save()
+          .then(() => res.json(newUser._id))
+          .catch(err => res.status(400).json('Error: ' + err));
+      }
+      else{
+          return res.json("Please check conform password")
+      }
+    }
   }
-  
-});
+})});
  
 router.route('/checkuser').post((req, res) => {
   // const email1= req.body.email;
@@ -40,15 +48,15 @@ router.route('/checkuser').post((req, res) => {
           return res.json(  "Not all fields have been entered." );
       User.findOne({email:uemail },(err,user)=>{
         if(!user)
-          res.json('err');
+         return res.json('There is no email registerd with this email');
         else
         {
           // console.log("email there")
           User.findOne({ email:uemail,password: upassword },(err,user)=>{
             if(!user)
-            res.json('err');
+              return res.json('You have entered wrong password');
             else
-              res.json(user._id)
+              return res.json(user._id)
           });
         }
       });

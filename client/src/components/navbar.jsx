@@ -16,7 +16,7 @@ function Navbar () {
             <ul>
                 <li><Link to="/signUp" className="nav-link">signUp</Link></li>
                 <li><Link to="/login" className="nav-link">login</Link></li>
-                <li><Link to="/session" className="nav-link">session</Link></li>
+                <li><Link to="/logout" className="nav-link">logout</Link></li>
                   
             </ul>
          </div>

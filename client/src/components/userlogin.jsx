@@ -8,12 +8,15 @@ import { faUser,faLock } from '@fortawesome/free-solid-svg-icons';
 import {ReactSession} from 'react-client-session';
 import {useNavigate} from 'react-router-dom';
 import Navbar from  "./navbar";
+import spinner from "../images/spinner.gif";
+import Footer from "./footer";
 ReactSession.get("username");
 function LoginUser () {
     const [note, setNote] = useState({
         email: "",
         password:""
       });
+      const [loading,setLoading] = useState(true)
       let navigate=useNavigate();
       function handleChange(event) {
         const { name, value } = event.target;
@@ -30,18 +33,22 @@ function LoginUser () {
             uemail:note.email,
             upassword:note.password
           }
+          setLoading(false) 
           axios.post('/users/checkuser', user)
             // .then(res => console.log(res.data+"11111111111111")); 
             .then(res => {
-              if(res.data!=="err"){
+              if( res.data.length ===24){
                 ReactSession.set("username", res.data);
                 localStorage.setItem("username", res.data)
                 // <Navigate to='/signUp' />
+                setLoading(true)
                 navigate("/outer")
                 console.log("logged in")
               }
               else{
-                alert("please enter correct detals or signup")
+                // alert("please enter correct detals or signup")
+                alert(res.data)
+                setLoading(true)
                 navigate("/signUp")
               }
             }); 
@@ -54,6 +61,8 @@ function LoginUser () {
       if(!localStorage.getItem("username"))  
       return (
         <div>
+        {!loading?(<img src={spinner} alt="...loading" width="100px" height="100px" style={{margin:"5% 0 0 40%" }}  /> )
+        :(<div>
         <Navbar />  
         <div className="Signup">
           <h1> one login ... to create your own website</h1>    
@@ -97,10 +106,15 @@ function LoginUser () {
                
           </form>
         </div>
+        
+        </div>
+        
+        )}
+        {/* <Footer ftColor='#6b5567'/> */}
         </div>
       );
       else{
-        return(<div>try to logout</div>);
+        return(<div style={{margin:"0 0 0 40%",paddingTop:"10%"}}>Already logged in try to logout by clicking logout <li><Link to="/logout" className="nav-link">logout</Link></li></div>);
       }
 }
 export {  LoginUser };

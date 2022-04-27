@@ -69,15 +69,19 @@ function CreateUser () {
             .then(res => {
             if(  res.data.length ===24)
             {
+               
               ReactSession.set("username", res.data);
               localStorage.setItem("username", res.data);
               setLoading(true)
+              
               navigate("/outer")
             }
             else
+            {
               alert(res.data)
               setLoading(true)
               navigate("/signUp")
+            }
             })
             .catch(err=>alert(err))
             
